@@ -15,7 +15,7 @@ body {
     font-family: 'Fjalla One', sans-serif;
     color: #003300;
     text-align: center;
-    flex-basis: 320px;
+    flex-basis: 350px;
 }
 
 #greeting_header {
@@ -23,7 +23,7 @@ body {
 }
 
 #greeting_sub_header{
-    font-size: 34px;
+    font-size: 38px;
 }
 
 .accentuation {
