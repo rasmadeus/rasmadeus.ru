@@ -4,15 +4,58 @@
         <title>Kulikov K.A. home page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./css/styles.css">
-        <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
-        <script type="text/javascript" src="./js/gmap.js"></script>
-        <script type="text/javascript">
-            google.maps.event.addDomListener(window, 'load', init_map);
+        <link rel="stylesheet" href="./css/styles.css">
+        <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet'>       
+        <script src="js/menu_items.js"></script>
+        <script src="js/item.js"></script>
+        <script>
+            window.onload = function () {
+                var main_color = window.getComputedStyle(document.getElementById("greeting")).color;
+                var background_color = window.getComputedStyle(document.body).backgroundColor;
+                var accent_color = window.getComputedStyle(document.getElementsByClassName("accentuation")[0]).color;
+                var canvas = document.getElementById("menu_items");
+                
+                var items = [
+                    "           ",
+                    "               ",
+                    "                   ",
+                    "               ",
+                    "               ",
+                    "                   ",
+                    "Main page",
+                    "Information about me",
+                    "Contacts",
+                    "Articles",
+                    "                   ",
+                    "               ",
+                    "                    ",
+                    "                   ",
+                    "               ",
+                    "           "
+                ];
+                
+                var menu_items = new MenuItems(canvas, items);
+                menu_items.setColorScheme(main_color, background_color, accent_color);
+                menu_items.append_items(items);
+                menu_items.paint();
+            };
         </script>
     </head>
     <body>
-        <div id="background">
+        <div id="container">
+            <div id="greeting">
+                <span id="greeting_header">
+                    Hi every<span class="accentuation">one</span>
+                </span>
+                <span id="greeting_sub_header">
+                    My name is <span class="accentuation">Konstantin</span>.
+                    I'm very glad to see you at my home page!
+                </span>
+            </div>
+            <div id="menu">
+                <canvas id="menu_items" width="1024px" height="350px"></canvas>
+            </div>
         </div>
     </body>
 </html>

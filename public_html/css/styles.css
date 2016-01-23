@@ -1,9 +1,35 @@
-#background {
-    height: 100%; 
-    width: 100%; 
-    position:absolute; 
-    top: 0; 
-    left: 0; 
-    z-index: 0;
-    opacity: 0.5;    
+body {
+    background-color: #ccffcc;
 }
+
+#container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: stretch;
+    width: 1024px;
+    margin: auto;
+}
+
+#greeting {
+    font-family: 'Fjalla One', sans-serif;
+    color: #003300;
+    text-align: center;
+    flex-basis: 320px;
+}
+
+#greeting_header {
+    font-size: 220px;
+}
+
+#greeting_sub_header{
+    font-size: 34px;
+}
+
+.accentuation {
+    color: #aa0000;
+}
+
+#menu {
+}
+
