@@ -46,4 +46,18 @@ function MenuItems(canvas) {
             items[i].set_hover(item_contains_mouse);
         }
     };
+    
+    this.process_mouse_click = function (ev) {
+        var rect = canvas.getBoundingClientRect();
+        var mouse_x = ev.clientX - rect.left;
+        var mouse_y = ev.clientY - rect.top;
+        
+        for(var i = 0; i < items.length; ++i) {
+            var item_contains_mouse = items[i].contains(mouse_x, mouse_y);
+            if (item_contains_mouse) {
+                items[i].go();
+                break;
+            }
+        }
+    };
 }

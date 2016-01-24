@@ -16,18 +16,18 @@
                 var canvas = document.getElementById("menu_items");
                 
                 var items = [
-                    "   ",
-                    "      ",
-                    "         ",
-                    "Log in",
-                    "Contacts",
-                    "Proffesion",
-                    "Hobby",
-                    "Articles",
-                    "    ",
-                    "         ",
-                    "        ",
-                    "   "
+                    {text: "   ", url: ""},
+                    {text: "      ", url: ""},
+                    {text: "         ", url: ""},
+                    {text: "Log in", url: ""},
+                    {text: "Contacts", url: "static_pages/contacts.html"},
+                    {text: "Proffesion", url: "static_pages/proffesion.html"},
+                    {text: "Hobby", url: "static_pages/hobby.html"},
+                    {text: "Articles", url: ""},
+                    {text: "    ", url: ""},
+                    {text: "         ", url: ""},
+                    {text: "        ", url: ""},
+                    {text: "   ", url: ""}
                 ];
                 
                 var menu_items = new MenuItems(canvas, items);
@@ -38,7 +38,10 @@
                 document.addEventListener("mousemove", function (ev) {
                     menu_items.process_mouse_move(ev);
                     menu_items.paint();
-                });                
+                });
+                
+                document.addEventListener("click", menu_items.process_mouse_click);
+                
             };
         </script>
     </head>

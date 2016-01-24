@@ -8,7 +8,7 @@ function Item(context, x, y, height, text) {
     this._accent_color = "red";
     
     var text_width = function () {
-        return context.measureText(text).width;  
+        return context.measureText(text["text"]).width;  
     };
     
     this._item_background = function () {
@@ -49,8 +49,14 @@ function Item(context, x, y, height, text) {
         context.fillRect(0 + hover_offset, 0, width, height);
 
         context.fillStyle = this._background_color;
-        context.fillText(text, offset + hover_offset, height / 2 + textSize / 4);
+        context.fillText(text["text"], offset + hover_offset, height / 2 + textSize / 4);
         
         context.restore();
+    };
+    
+    this.go = function () {
+        if (text["url"]) {
+            window.location.href = text["url"];
+        }
     };
 }
