@@ -14,14 +14,14 @@ function MenuItems(canvas) {
         var y = 0;
         for(var i = 0; i < text_items.length; ++i) {
             var item = new Item(context, x, y, height, text_items[i]);
-            item.setColorScheme(this._main_color, this._background_color, this._accent_color);
+            item.set_color_scheme(this._main_color, this._background_color, this._accent_color);
             x += offset;
             x += height;
             items.push(item);
         }
     };
     
-    this.setColorScheme = function (main_color, background_color, accent_color) {
+    this.set_color_scheme = function (main_color, background_color, accent_color) {
         this._main_color = main_color;
         this._background_color = background_color;
         this._accent_color = accent_color;
@@ -33,6 +33,17 @@ function MenuItems(canvas) {
         
         for(var i = 0; i < items.length; ++i) {
             items[i].paint();
+        }
+    };
+    
+    this.process_mouse_move = function (ev) {
+        var rect = canvas.getBoundingClientRect();
+        var mouse_x = ev.clientX - rect.left;
+        var mouse_y = ev.clientY - rect.top;
+
+        for(var i = 0; i < items.length; ++i) {
+            var item_contains_mouse = items[i].contains(mouse_x, mouse_y);
+            items[i].set_hover(item_contains_mouse);
         }
     };
 }

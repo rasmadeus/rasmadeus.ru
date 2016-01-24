@@ -5,8 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/styles.css">
-        <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet'>
-        <link href='https://fonts.googleapis.com/css?family=Libre+Baskerville' rel='stylesheet'>       
+        <link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet'>  
         <script src="js/menu_items.js"></script>
         <script src="js/item.js"></script>
         <script>
@@ -17,28 +16,29 @@
                 var canvas = document.getElementById("menu_items");
                 
                 var items = [
-                    "           ",
-                    "               ",
-                    "                   ",
-                    "               ",
-                    "                 ",
-                    "Admin's tools",
-                    "Main page",
-                    "Information about me",
+                    "   ",
+                    "      ",
+                    "         ",
+                    "Log in",
                     "Contacts",
+                    "Proffesion",
+                    "Hobby",
                     "Articles",
-                    "                   ",
-                    "               ",
-                    "                    ",
-                    "                   ",
-                    "               ",
-                    "           "
+                    "    ",
+                    "         ",
+                    "        ",
+                    "   "
                 ];
                 
                 var menu_items = new MenuItems(canvas, items);
-                menu_items.setColorScheme(main_color, background_color, accent_color);
+                menu_items.set_color_scheme(main_color, background_color, accent_color);
                 menu_items.append_items(items);
                 menu_items.paint();
+                
+                document.addEventListener("mousemove", function (ev) {
+                    menu_items.process_mouse_move(ev);
+                    menu_items.paint();
+                });                
             };
         </script>
     </head>
