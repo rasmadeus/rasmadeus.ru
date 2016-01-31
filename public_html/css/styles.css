@@ -6,7 +6,7 @@ body {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     width: 1024px;
     margin: auto;
 }
@@ -16,20 +16,75 @@ body {
     color: #003300;
     text-align: center;
     flex-basis: 350px;
+    min-width: 860px;
 }
 
 #greeting_header {
     font-size: 220px;
 }
 
+
 #greeting_sub_header{
     font-size: 38px;
 }
 
-.accentuation {
+.accentuation, .menu_item a:hover, .contacts_link a:hover{
     color: #aa0000;
 }
 
-#menu {
+.menu_item a {
+    font-size: 20px;
 }
 
+#greeting nav {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+}
+
+.menu_item {
+    flex-basis: 165px;
+    background-color: #003300;
+    border-radius: 10px;
+    height: 40px;
+    line-height: 40px;
+    margin: 5px;
+}
+
+.menu_item a {
+    text-decoration: none;
+    color: #ddffdd;
+    outline: none;
+}
+
+#content, #contacts_content {
+    width: 860px;
+    color: #003300;
+    font-size: 20px;
+}
+
+#content {
+    text-align: justify;
+    text-indent: 60px;    
+}
+
+#contacts_content table{
+    width: 100%;
+}
+
+.contacts_comment {
+    width: 40%;
+    text-align: right;
+}
+
+.contacts_link {
+    width: 60%;
+    text-align: left;
+}
+
+.contacts_link a {
+    text-decoration: none;
+    outline: none;
+    color:#003300;
+}
