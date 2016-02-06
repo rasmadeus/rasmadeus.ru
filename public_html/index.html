@@ -11,7 +11,7 @@
         <script>
             window.onload = function () {
                 var main_color = window.getComputedStyle(document.getElementById("greeting")).color;
-                var background_color = window.getComputedStyle(document.body).backgroundColor;
+                var background_color = "#ddffdd";
                 var accent_color = window.getComputedStyle(document.getElementsByClassName("accentuation")[0]).color;
                 var canvas = document.getElementById("menu_items");
                 
@@ -47,13 +47,16 @@
     </head>
     <body>
         <div id="container">
+            <div>
+                <img id="clouds" src="res/clouds.svg">
+            </div>
             <div id="greeting">
                 <span id="greeting_header">
-                    Hi every<span class="accentuation">one</span>
+                    Hi every<span class="accentuation">o</span>ne
                 </span>
                 <br>
                 <span id="greeting_sub_header">
-                    My name is <span class="accentuation">Konstantin</span>.
+                    My name is Konstantin.
                     I'm very glad to see you at my home page!
                 </span>
             </div>

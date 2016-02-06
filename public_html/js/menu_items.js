@@ -28,8 +28,7 @@ function MenuItems(canvas) {
     };
     
     this.paint = function() {
-        context.fillStyle = this._background_color;
-        context.fillRect(0, 0, canvas.width, canvas.height);
+        context.clearRect(0, 0, canvas.width, canvas.height);
         
         for(var i = 0; i < items.length; ++i) {
             items[i].paint();

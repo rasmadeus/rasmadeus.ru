@@ -12,7 +12,7 @@ function Item(context, x, y, height, text) {
     };
     
     this._item_background = function () {
-        var gradient = context.createLinearGradient(0, 0, 100, 0);
+        var gradient = context.createLinearGradient(0, 50, 100, 0);
         gradient.addColorStop(1, this._main_color);
         gradient.addColorStop(0, this._background_color);
         return gradient;
