@@ -36,7 +36,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'article'
+    'rapp.article'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -50,7 +50,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-ROOT_URLCONF = 'rasmadeus.urls'
+ROOT_URLCONF = 'rapp.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'rasmadeus.wsgi.application'
+WSGI_APPLICATION = 'rapp.wsgi.application'
 
 
 # Database
