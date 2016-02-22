@@ -1,3 +1,4 @@
 from django.contrib import admin
+from rapp.article import models
 
-# Register your models here.
+admin.site.register(models.ArticleGroup)
