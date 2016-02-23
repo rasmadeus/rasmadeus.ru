@@ -59,14 +59,14 @@ body {
     padding-left: 0.5em;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 768px) {
     .article_wrapper {
         flex-basis: calc(100% - 0.5em);
         padding: 0.0em 0.5em 0.5em 0.0em;
     }
 }
 
-@media (min-width: 401px) {
+@media (min-width: 769px) {
     .article_wrapper {
         flex-basis: calc(50% - 0.5em);
         padding: 0.0em 0.5em 0.5em 0.0em;
