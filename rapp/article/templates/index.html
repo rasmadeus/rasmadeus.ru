@@ -5,7 +5,7 @@
     <link href="/static/css/style.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Mate' rel='stylesheet'>
-    <title>Page title</title>
+    <title>K. Kulikov home page</title>
 </head>
 <body>
     <div id="main">
@@ -14,30 +14,14 @@
             <div><a href="/admin">Login</a></div>
         </header>
             <div id="content">
-                <div class="article_wrapper">
-                    <div class="article">
-                        <h1><a href="">Article</a></h1>
-                        The article description.
+                {% for article_group in article_groups %}
+                    <div class="article_wrapper">
+                        <div class="article">
+                            <h1><a href="">{{ article_group.header }}</a></h1>
+                            {{ article_group.description }}
+                        </div>
                     </div>
-                </div>
-                <div class="article_wrapper">
-                    <div class="article">
-                        <h1>Article</h1>
-                        The article description.
-                    </div>
-                </div>
-                <div class="article_wrapper">
-                    <div class="article">
-                        <h1>Article</h1>
-                        The article description.
-                    </div>
-                </div>
-                <div class="article_wrapper">
-                    <div class="article">
-                        <h1>Article</h1>
-                        The article description.
-                    </div>
-                </div>
+                {% endfor %}
             </div>
 
         <footer>
