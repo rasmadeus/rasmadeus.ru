@@ -9,3 +9,6 @@ class ArticleGroup(models.Model):
 
     def get_absolute_url(self):
         return "/{slug}/".format(slug=self.slug)
+
+    def __unicode__(self):
+        return self.header
