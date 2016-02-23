@@ -5,5 +5,5 @@ from rapp.article.models import ArticleGroup
 
 def index(request):
     template = get_template('index.html')
-    context = {'article_groups': ArticleGroup.objects}
+    context = {'article_groups': ArticleGroup.objects.all()}
     return HttpResponse(template.render(context, request))
