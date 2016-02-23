@@ -1,6 +1,6 @@
 from django.conf.urls import url
-from rapp.article import views
+import views
 
 urlpatterns = [
-    url(r'^(?P<slug>[-\w]+)/$', views.ArticleDetailView.as_view(), name='articles_group'),
+    url(r'^(?P<slug>[-\w]+)/$', views.ArticlesGroupDetailView.as_view(), name='articles_group'),
 ]
