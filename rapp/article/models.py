@@ -17,16 +17,4 @@ class Article(models.Model):
         return self.header
 
 
-class ArticleGroup(models.Model):
-    slug = models.CharField(unique=True, null=False, max_length=64, verbose_name="Url path")
-    header = models.CharField(null=False, max_length=64, verbose_name="Header")
-    description = models.TextField(null=False, verbose_name="Description")
-    articles = models.ManyToManyField(Article, verbose_name="Articles")
-
-    def get_absolute_url(self):
-        return "/{slug}/".format(slug=self.slug)
-
-    def __unicode__(self):
-        return self.header
-
 
