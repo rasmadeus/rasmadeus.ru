@@ -8,9 +8,9 @@ def index(request):
     context = {'articles': Article.objects.all()}
     return HttpResponse(template.render(context, request))
 
-class ArticlesGroupDetailView(DetailView):
+class ArticlesDetailView(DetailView):
     model = Article
-    context_object_name = 'articles_group'
+    context_object_name = 'article'
 
     def get_context_data(self, **kwargs):
         context = super(Article, self).get_context_data(**kwargs)

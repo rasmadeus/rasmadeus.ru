@@ -6,7 +6,7 @@
     <link href="/static/css/style.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Mate' rel='stylesheet'>
-    <title>{{ articles_group.header }}</title>
+    <title>{{ article.header }}</title>
 </head>
 <body>
     <div id="main">
@@ -15,14 +15,12 @@
             <div><a href="/admin">Login</a></div>
         </header>
         <div id="content">
-            {% for article in articles_group.articles %}
-                <div class="article_wrapper">
-                    <div class="article">
-                        <h1><a href="">{{ article.header }}</a></h1>
-                        {{ article.content }}
-                    </div>
+            <div class="one_article_wrapper">
+                <div class="article">
+                    <h1>{{ article.header }}</h1>
+                    {{ article.content }}
                 </div>
-            {% endfor %}
+            </div>
         </div>
         <footer>
             Contacts: rasmadeus@gmail.com
