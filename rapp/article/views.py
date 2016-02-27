@@ -17,6 +17,7 @@ def index(request):
 
 def logout_view(request):
     logout(request)
+    return index(request)
 
 class ArticleDetailView(DetailView):
     model = Article
