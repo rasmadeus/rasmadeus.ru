@@ -101,18 +101,23 @@ body {
     }
 }
 
-.article h1, #one_article h1 {
+.article h1, #one_article h1{
     margin: 0;
     font-size: 1.2em;
 }
 
-#one_article h1 a:hover, .article h1 a {
+#one_article h2{
+    margin: 0;
+    font-size: 1.0em;
+}
+
+.article_nav a, .article h1 a {
     color: rgb(10%, 10%, 10%);
     text-decoration: none;
     outline: none;
 }
 
-#one_article h1 a:hover, .article h1 a:hover {
+.article_nav a:hover, .article h1 a:hover {
     color: rgb(100%, 30%, 0%);
 }
 
