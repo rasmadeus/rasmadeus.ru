@@ -106,13 +106,13 @@ body {
     font-size: 1.2em;
 }
 
-.link, .article h1 a {
+.link a, .article h1 a {
     color: rgb(10%, 10%, 10%);
     text-decoration: none;
     outline: none;
 }
 
-.link, .article h1 a:hover {
+.link a:hover, .article h1 a:hover {
     color: rgb(100%, 30%, 0%);
 }
 
@@ -122,6 +122,7 @@ body {
 }
 
 .article_nav {
+    border: 1px solid black;
     width: 100%;
     height: 100%;
 }
