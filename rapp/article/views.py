@@ -15,12 +15,15 @@ class _Header:
             self._url = "/admin"
             self._caption = "Login"
 
+    @property
     def username(self):
         return self._username
 
+    @property
     def url(self):
         return self._url
 
+    @property
     def caption(self):
         return self._caption
 
