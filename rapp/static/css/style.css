@@ -93,11 +93,11 @@ body {
 
 @keyframes grow_down {
     from {
-        transform: rotate(0.0deg);
+        background-color: rgb(90%, 90%, 90%);
     }
 
     to {
-        transform: rotate(5.0deg);
+        background-color: rgb(60%, 60%, 60%);
     }
 }
 
