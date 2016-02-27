@@ -14,7 +14,7 @@ def _get_client_ip(request):
 
 def _get_greeting(request):
     greeting = request.user.username if request.user.is_authenticated() else "everyone"
-    return greeting + " Вы пришли отсюда: " + _get_client_ip(request)
+    return greeting + " You are from: " + _get_client_ip(request)
 
 def index(request):
     template = get_template('index.html')
