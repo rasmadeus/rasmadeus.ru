@@ -7,10 +7,10 @@ class Article(models.Model):
     slug = models.SlugField(unique=True, null=False, verbose_name="Url path")
     header = models.CharField(null=False, max_length=64, verbose_name="Header")
     content = models.TextField(null=False, verbose_name="Content")
-    author = models.ForeignKey(User, on_delete=models.SET_NULL, verbose_name="Author")
+    author = models.ForeignKey(User, null=False, verbose_name="Author")
     edit_time = models.DateTimeField(default=datetime.now(), blank=True, verbose_name="Article edit time")
-    prev_article = models.ForeignKey('Article', on_delete=models.SET_NULL, verbose_name="Previous article")
-    prev_article = models.ForeignKey('Article', on_delete=models.SET_NULL, verbose_name="Next article")
+    prev_article = models.ForeignKey('Article', null=True, verbose_name="Previous article")
+    prev_article = models.ForeignKey('Article', null=True, verbose_name="Next article")
 
     def get_absolute_url(self):
         return "/{slug}/".format(slug=self.slug)
