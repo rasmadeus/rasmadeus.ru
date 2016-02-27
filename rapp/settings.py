@@ -37,8 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'django.contrib.flatpages',
-    'django_markdown',
+    'redactor',
     'rapp.article',
 )
 
@@ -137,4 +136,6 @@ STATICFILES_DIRS = (
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-MARKDOWN_EDITOR_SKIN = 'simple'
+REDACTOR_OPTIONS = {'lang': 'en'}
+REDACTOR_UPLOAD = 'uploads/'
+REDACTOR_AUTH_DECORATOR = 'django.contrib.auth.decorators.login_required'
