@@ -9,7 +9,7 @@ flatpages.register()
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^markdown/', include( 'django_markdown.urls')),
+    url(r'^markdown/', include('django_markdown.urls')),
     url(r'^logout/', logout_view),
     url(r'^articles/', include("rapp.article.urls")),
     url(r'^$', index),
