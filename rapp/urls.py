@@ -6,7 +6,7 @@ from django.conf.urls import  handler404
 admin.autodiscover()
 
 urlpatterns = [
-    url(r'^login/', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^logout/', logout_view),
     url(r'^articles/', include("rapp.article.urls")),
     url(r'^$', index),
