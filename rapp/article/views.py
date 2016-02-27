@@ -4,15 +4,12 @@ from rapp.article.models import Article
 from django.views.generic.detail import DetailView
 from django.contrib.auth import logout
 
-def _build_header(request):
-    if request.user.is_authenticated():
-        return {'username': request.user.username, 'url': "/logout", 'caption': "Logout"}
-    else:
-        return {'username': "everyone", 'url': "/admin", 'caption': "Login"}
+def _get_greeting(request):
+    return request.user.username if request.user.is_authenticated() else "everyone"
 
 def index(request):
     template = get_template('index.html')
-    context = {'articles': Article.objects.all(), 'header': _build_header(request)}
+    context = {'articles': Article.objects.all(), 'greeting': _get_greeting(request)}
     return HttpResponse(template.render(context, request))
 
 def logout_view(request):
@@ -21,7 +18,7 @@ def logout_view(request):
 
 def code_404_view(request):
     template = get_template('404.html')
-    context = {'header': _build_header(request)}
+    context = {'greeting': _get_greeting(request)}
     return HttpResponse(template.render(context, request))
 
 

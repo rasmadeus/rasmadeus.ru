@@ -13,8 +13,8 @@
 <body>
     <div id="main">
         <header>
-            <div id="page_caption"><a href="/">Hi {{ header.username }}!</a></div>
-            <div><a href="{{ header.url }}">{{ header.caption }}</a></div>
+            <div id="page_caption"><a href="/">Hi {{ greeting }}!</a></div>
+            <div><a href="/admin/">Войти</a></div>
         </header>
         <div id="content">
             {% block content %}
