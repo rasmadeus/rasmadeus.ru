@@ -8,9 +8,8 @@ class Article(models.Model):
     content = models.TextField(null=False, verbose_name="Content")
     author = models.ForeignKey(User, unique=False, null=False, verbose_name="Author")
     edit_time = models.DateTimeField(blank=False, verbose_name="Article edit time")
-
-    #prev_article = models.ForeignKey('Article', related_name="article_prev", unique=False, null=True, verbose_name="Previous article")
-    #next_article = models.ForeignKey('Article', related_name="article_next", unique=False, null=True, verbose_name="Next article")
+    prev_article = models.ForeignKey('Article', related_name="article_prev", unique=False, null=True, verbose_name="Previous article")
+    next_article = models.ForeignKey('Article', related_name="article_next", unique=False, null=True, verbose_name="Next article")
 
     def get_absolute_url(self):
         return "/{slug}/".format(slug=self.slug)
