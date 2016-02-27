@@ -36,7 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rapp.article'
+    'rapp.article',
+    'django_markdown',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -134,3 +135,4 @@ STATICFILES_DIRS = (
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+MARKDOWN_EDITOR_SKIN = 'simple'
