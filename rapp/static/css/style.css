@@ -67,7 +67,7 @@ body {
     word-wrap: break-word;
 }
 
-.one_article {
+#one_article {
     width: calc(100% - 1.5em);
 }
 
