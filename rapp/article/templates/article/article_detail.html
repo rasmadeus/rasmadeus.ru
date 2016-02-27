@@ -2,7 +2,7 @@
 {% block content %}
     <div id="one_article">
         <h1>{{ article.header }}</h1>
-        {{ article.content }}
+        {{ article.content|markdown }}
         <div class="article_nav">
             {% if article.prev_article != None %}
                 <h2><a href="/articles/{{ article.prev_article.slug }}/">Предисловие</a></h2>
