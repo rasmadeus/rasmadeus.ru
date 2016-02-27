@@ -28,5 +28,5 @@ class ArticleDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(ArticleDetailView, self).get_context_data(**kwargs)
-        context['header'] = _build_header(self.request);
+        context['greeting'] = _get_greeting(self.request);
         return context
