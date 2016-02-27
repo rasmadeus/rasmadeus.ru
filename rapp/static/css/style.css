@@ -106,13 +106,13 @@ body {
     font-size: 1.2em;
 }
 
-.article h1 a {
+.link, .article h1 a {
     color: rgb(10%, 10%, 10%);
     text-decoration: none;
     outline: none;
 }
 
-.article h1 a:hover {
+.link, .article h1 a:hover {
     color: rgb(100%, 30%, 0%);
 }
 
