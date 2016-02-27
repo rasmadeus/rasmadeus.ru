@@ -1,28 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width" />
-    <link href="/static/css/style.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Mate' rel='stylesheet'>
-    <title>{{ article.header }}</title>
-</head>
-<body>
-    <div id="main">
-        <header>
-            <div id="page_caption"><a href="/">Hi everyone!</a></div>
-            <div><a href="/admin">Login</a></div>
-        </header>
-        <div id="content">
-            <div id="one_article">
-                <h1>{{ article.header }}</h1>
-                {{ article.content }}
-            </div>
-        </div>
-        <footer>
-            Contacts: rasmadeus@gmail.com
-        </footer>
+{% extends "base.html" %}
+{% block content %}
+    <div id="one_article">
+        <h1>{{ article.header }}</h1>
+        {{ article.content }}
     </div>
-</body>
-</html>
+{% endblock %}

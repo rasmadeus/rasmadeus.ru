@@ -1,31 +1,9 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width" />
-    <link href="/static/css/style.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Mate' rel='stylesheet'>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-    <title>K. Kulikov home page</title>
-</head>
-<body>
-    <div id="main">
-        <header>
-            <div id="page_caption"><a href="/">Hi {{ header.username }}!</a></div>
-            <div><a href="{{ header.url }}">{{ header.caption }}</a></div>
-        </header>
-        <div id="content">
-            {% for article in articles %}
-                <div class="article">
-                    <h1><a href="/articles/{{ article.slug }}">{{ article.header }}</a></h1>
-                    {{ article.content }}
-                </div>
-            {% endfor %}
+{% extends "base.html" %}
+{% block content %}
+    {% for article in articles %}
+        <div class="article">
+            <h1><a href="/articles/{{ article.slug }}">{{ article.header }}</a></h1>
+            {{ article.content }}
         </div>
-        <footer>
-            Контакты: rasmadeus@gmail.com
-        </footer>
-    </div>
-</body>
-</html>
+    {% endfor %}
+{% endblock %}
