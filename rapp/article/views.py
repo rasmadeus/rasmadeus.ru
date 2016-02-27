@@ -4,17 +4,8 @@ from rapp.article.models import Article
 from django.views.generic.detail import DetailView
 from django.contrib.auth import logout
 
-def _get_client_ip(request):
-    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-    if x_forwarded_for:
-        ip = x_forwarded_for.split(',')[0]
-    else:
-        ip = request.META.get('REMOTE_ADDR')
-    return ip
-
 def _get_greeting(request):
-    greeting = request.user.username if request.user.is_authenticated() else "everyone"
-    return greeting + " You are from: " + _get_client_ip(request)
+    return request.user.username if request.user.is_authenticated() else "everyone"
 
 def index(request):
     template = get_template('index.html')
