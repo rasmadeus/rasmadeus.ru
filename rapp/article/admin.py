@@ -10,7 +10,7 @@ class EntryAdminForm(forms.ModelForm):
         model = models.Article
         fields = ('content',)
         widgets = {
-           'short_text': RedactorEditor(),
+           'content': RedactorEditor(),
         }
 
 class EntryAdmin(admin.ModelAdmin):
