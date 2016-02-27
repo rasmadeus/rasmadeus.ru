@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: rgb(60%, 60%, 60%);
-    font-family: 'Mate', serif;
+    font-family: 'Kurale', serif;
 }
 
 #main {
@@ -37,7 +37,7 @@ body {
 }
 
 #page_caption a {
-    font-family: 'Courgette', cursive;
+    font-family: 'Marck Script', cursive;
     font-size: 1.2em;
 }
 
@@ -47,7 +47,7 @@ body {
     text-align: center;
     vertical-align: center;
     background-color: rgb(10%, 10%, 10%);
-    font-family: 'Courgette', cursive;
+    font-family: 'Marck Script', cursive;
     font-size: 1.2em;
 }
 
