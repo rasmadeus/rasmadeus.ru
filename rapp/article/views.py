@@ -10,14 +10,17 @@ def _build_header(request):
     else:
         return {'username': "everyone", 'url': "/admin", 'caption': "Login"}
 
+
 def index(request):
     template = get_template('index.html')
     context = {'articles': Article.objects.all(), 'header': _build_header(request)}
     return HttpResponse(template.render(context, request))
 
+
 def logout_view(request):
     logout(request)
     return index(request)
+
 
 def code_404_view(request):
     template = get_template('404.html')
