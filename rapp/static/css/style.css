@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: rgb(80%, 80%, 80%);
+    background-color: rgb(60%, 60%, 60%);
     font-family: 'Mate', serif;
 }
 
@@ -53,36 +53,52 @@ body {
 
 #content {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     align-content: stretch;
+    justify-content: center;
     flex-wrap: wrap;
     padding-left: 0.5em;
 }
 
-@media only screen and (max-width: 768px) {
-    .article_wrapper {
-        flex-basis: calc(100% - 0.5em);
-        padding: 0.0em 0.5em 0.5em 0.0em;
-    }
+.article, .one_article {
+    background-color: rgb(90%, 90%, 90%);
+    margin: 0.0em 0.5em 0.5em 0.0em;
+    padding: 0.5em;
+    word-wrap: break-word;
 }
 
-#one_article_wrapper {
-    flex-basis: calc(100% - 0.5em);
-    padding: 0.0em 0.5em 0.5em 0.0em;
+.one_article {
+    width: calc(100% - 1.5em);
+}
+
+.article:hover {
+    animation-name: grow_down;
+    animation-duration: 0.4s;
+    animation-timing-function: linear;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+}
+
+@media only screen and (max-width: 768px) {
+    .article {
+        width: calc(100% - 1.5em);
+    }
 }
 
 @media only screen and (min-width: 769px) {
-    .article_wrapper {
-        flex-basis: calc(50% - 0.5em);
-        padding: 0.0em 0.5em 0.5em 0.0em;
+    .article {
+        width: calc(50% - 1.5em);
     }
 }
 
-.article {
-    background-color: rgb(90%, 90%, 90%);
-    border-radius: 1em;
-    padding: 0.5em;
-    height: 100%;
+@keyframes grow_down {
+    from {
+        transform: rotate(0.0deg);
+    }
+
+    to {
+        transform: rotate(5.0deg);
+    }
 }
 
 .article h1 {
