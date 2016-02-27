@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
     <link href="/static/css/style.css" rel="stylesheet">
-    <link href="../../static/css/style.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Courgette' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Mate' rel='stylesheet'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
@@ -18,10 +17,10 @@
         </header>
         <div id="content">
             {% for article in articles %}
-                    <div class="article">
-                        <h1><a href="/articles/{{ article.slug }}">{{ article.header }}</a></h1>
-                        {{ article.content }}
-                    </div>
+                <div class="article">
+                    <h1><a href="/articles/{{ article.slug }}">{{ article.header }}</a></h1>
+                    {{ article.content }}
+                </div>
             {% endfor %}
         </div>
         <footer>
