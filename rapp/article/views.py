@@ -8,7 +8,7 @@ def _build_header(request):
     if request.user.is_authenticated():
         return {'username': request.user.username, 'url': "/logout", 'caption': "Logout"}
     else:
-        return {'username': "everyone", 'url': "/admin", 'caption': "Login"}
+        return {'username': "everyone", 'url': "/login", 'caption': "Login"}
 
 def index(request):
     template = get_template('index.html')
