@@ -10,7 +10,7 @@ class Article(models.Model):
     author = models.ForeignKey(User, null=False, verbose_name="Author")
     edit_time = models.DateTimeField(default=datetime.now(), blank=True, verbose_name="Article edit time")
     prev_article = models.ForeignKey('Article', null=True, verbose_name="Previous article")
-    prev_article = models.ForeignKey('Article', null=True, verbose_name="Next article")
+    next_article = models.ForeignKey('Article', null=True, verbose_name="Next article")
 
     def get_absolute_url(self):
         return "/{slug}/".format(slug=self.slug)
