@@ -19,6 +19,12 @@ def logout_view(request):
     logout(request)
     return index(request)
 
+def code_404_view(request):
+    template = get_template('404.html')
+    context = {'header': _build_header(request)}
+    return HttpResponse(template.render(context, request))
+
+
 class ArticleDetailView(DetailView):
     model = Article
     context_object_name = 'article'
