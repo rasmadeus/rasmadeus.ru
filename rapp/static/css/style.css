@@ -112,7 +112,7 @@ body {
 }
 
 .article_nav h2 {
-    white-space:nowrap;
+    display: inline-block;
 }
 
 .article_nav a, .article h1 a {
