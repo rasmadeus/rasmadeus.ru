@@ -5,10 +5,10 @@ from redactor.fields import RedactorField
 
 
 class CommonData(models.Model):
-    title = models.CharField(null=False, default='K. Kulikov home page', verbose_name='Page title')
-    keywords = models.CharField(verbose_name='Keywords for search engines')
-    description = models.CharField(verbose_name='Description of a web page')
-    author = models.CharField(verbose_name='Author of a web page')
+    title = models.CharField(null=False, max_length=128, default='K. Kulikov home page', verbose_name='Page title')
+    keywords = models.CharField(max_length=256, verbose_name='Keywords for search engines')
+    description = models.CharField(max_length=256, verbose_name='Description of a web page')
+    author = models.CharField(max_length=64, verbose_name='Author of a web page')
 
     def __unicode__(self):
         return self.title
