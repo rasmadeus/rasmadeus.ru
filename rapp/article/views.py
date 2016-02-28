@@ -14,9 +14,9 @@ def index(request):
         'greeting': _get_greeting(request),
         'common_data': {
             'title': 'K. Kulikov home page',
-            'keywords': 'Куликов, программирование, с++',
+            'keywords': 'c++, python, army',
             'description': '',
-            'author': 'К.Куликов'
+            'author': 'K. Kulikov'
         }
     }
     return HttpResponse(template.render(context, request))
