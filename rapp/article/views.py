@@ -12,11 +12,13 @@ def index(request):
     context = {
         'articles': Article.objects.all(),
         'greeting': _get_greeting(request),
-        'common_data': {
-            'title': 'K. Kulikov home page',
-            'keywords': 'c++, python, army',
-            'description': '',
-            'author': 'K. Kulikov'
+        'article': {
+            'common_data': {
+                'title': 'K. Kulikov home page',
+                'keywords': 'c++, python, army',
+                'description': '',
+                'author': 'K. Kulikov'
+            }
         }
     }
     return HttpResponse(template.render(context, request))
@@ -29,11 +31,13 @@ def code_404_view(request):
     template = get_template('404.html')
     context = {
         'greeting': _get_greeting(request),
-        'common_data': {
-            'title': '404 - page not found',
-            'keywords': '',
-            'description': '',
-            'author': ''
+        'article': {
+            'common_data': {
+                'title': '404 - page not found',
+                'keywords': '',
+                'description': '',
+                'author': ''
+            }
         }
     }
     return HttpResponse(template.render(context, request))
