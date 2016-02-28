@@ -31,6 +31,7 @@ class Article(models.Model):
     edit_time = models.DateTimeField(blank=False, verbose_name="Article edit time")
     prev_article = models.ForeignKey('Article', related_name='article_prev', unique=False, blank=True, null=True, verbose_name='Previous article')
     next_article = models.ForeignKey('Article', related_name='article_next', unique=False, blank=True, null=True, verbose_name='Next article')
+    common_data = models.OneToOneField(CommonData, default=default_CommonData(), verbose_name='Meta data and header')
 
     def get_absolute_url(self):
         return "/{slug}/".format(slug=self.slug)
