@@ -9,7 +9,16 @@ def _get_greeting(request):
 
 def index(request):
     template = get_template('index.html')
-    context = {'articles': Article.objects.all(), 'greeting': _get_greeting(request)}
+    context = {
+        'articles': Article.objects.all(),
+        'greeting': _get_greeting(request),
+        'common_data': {
+            'title': 'K. Kulikov home page',
+            'keywords': 'Куликов, программирование, с++',
+            'description': '',
+            'author': 'К.Куликов'
+        }
+    }
     return HttpResponse(template.render(context, request))
 
 def logout_view(request):
