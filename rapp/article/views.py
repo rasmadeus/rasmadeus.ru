@@ -18,7 +18,15 @@ def logout_view(request):
 
 def code_404_view(request):
     template = get_template('404.html')
-    context = {'greeting': _get_greeting(request)}
+    context = {
+        'greeting': _get_greeting(request),
+        'common_data': {
+            'title': '404 - page not found',
+            'keywords': '',
+            'description': '',
+            'author': ''
+        }
+    }
     return HttpResponse(template.render(context, request))
 
 

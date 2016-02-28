@@ -3,15 +3,27 @@ from django.db import models
 from django.contrib.auth.models import User
 from redactor.fields import RedactorField
 
+
+class CommonData(models.Model):
+    title = models.CharField(null=False, default='K. Kulikov home page', verbose_name='Page title')
+    keywords = models.CharField(verbose_name='Keywords for search engines')
+    description = models.CharField(verbose_name='Description of a web page')
+    author = models.CharField(verbose_name='Author of a web page')
+
+    def __unicode__(self):
+        return self.title
+
+
 class Article(models.Model):
-    slug = models.SlugField(unique=True, null=False, default="article_slug", verbose_name="Url path")
-    header = models.CharField(null=False, max_length=64, default="Article header", verbose_name="Header")
-    description = models.TextField(null=False, default="Article description", verbose_name="Content")
-    content = RedactorField(null=False, default="Article content", verbose_name="Content")
+    slug = models.SlugField(unique=True, null=False, default='article_slug', verbose_name='Url path')
+    header = models.CharField(null=False, max_length=64, default='Article header', verbose_name='Header')
+    description = models.TextField(null=False, default='Article description', verbose_name='Content')
+    content = RedactorField(null=False, default='Article content', verbose_name='Content')
     author = models.ForeignKey(User, unique=False, null=False, verbose_name="Author")
     edit_time = models.DateTimeField(blank=False, verbose_name="Article edit time")
-    prev_article = models.ForeignKey('Article', related_name="article_prev", unique=False, blank=True, null=True, verbose_name="Previous article")
-    next_article = models.ForeignKey('Article', related_name="article_next", unique=False, blank=True, null=True, verbose_name="Next article")
+    prev_article = models.ForeignKey('Article', related_name='article_prev', unique=False, blank=True, null=True, verbose_name='Previous article')
+    next_article = models.ForeignKey('Article', related_name='article_next', unique=False, blank=True, null=True, verbose_name='Next article')
+    common_data = models.OneToOneField(CommonData, verbose_name='Meta data and header')
 
     def get_absolute_url(self):
         return "/{slug}/".format(slug=self.slug)
