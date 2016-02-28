@@ -14,6 +14,14 @@ class CommonData(models.Model):
         return self.title
 
 
+def default_CommonData():
+    default = CommonData.objects.get(title='K. Kulikov home page')
+    if (default is None):
+        default = CommonData()
+        default.save()
+    return default
+
+
 class Article(models.Model):
     slug = models.SlugField(unique=True, null=False, default='article_slug', verbose_name='Url path')
     header = models.CharField(null=False, max_length=64, default='Article header', verbose_name='Header')
@@ -23,7 +31,7 @@ class Article(models.Model):
     edit_time = models.DateTimeField(blank=False, verbose_name="Article edit time")
     prev_article = models.ForeignKey('Article', related_name='article_prev', unique=False, blank=True, null=True, verbose_name='Previous article')
     next_article = models.ForeignKey('Article', related_name='article_next', unique=False, blank=True, null=True, verbose_name='Next article')
-    common_data = models.OneToOneField(CommonData, verbose_name='Meta data and header')
+    common_data = models.OneToOneField(CommonData, default=default_CommonData(), verbose_name='Meta data and header')
 
     def get_absolute_url(self):
         return "/{slug}/".format(slug=self.slug)
