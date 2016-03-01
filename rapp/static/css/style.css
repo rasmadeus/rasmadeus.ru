@@ -108,7 +108,9 @@ body {
 
 #one_article h2, #one_article h3 {
     font-size: 1.0em;
-    margin: 0;
+    margin-left: 0.0em;
+    margin-right: 0.0em;
+    margin-bottom: 0.0em;
     font-size: 1.0em;
 
 }
@@ -118,6 +120,7 @@ body {
 }
 
 .article_nav h2 {
+    margin-top: 0.0em;
     display: inline-block;
 }
 
