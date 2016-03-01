@@ -106,12 +106,20 @@ body {
     font-size: 1.2em;
 }
 
-#one_article h2 {
-    margin: 0;
+#one_article h2, #one_article h3 {
     font-size: 1.0em;
+    margin-bottom: 0em;
+    margin-left: 0em;
+    margin-right: 0em;
+}
+
+#one_article {
+    text-align: justify;
 }
 
 .article_nav h2 {
+    margin: 0;
+    font-size: 1.0em;
     display: inline-block;
 }
 
