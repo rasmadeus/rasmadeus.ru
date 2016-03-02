@@ -36,7 +36,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'redactor',
     'rapp.article',
 )
 
@@ -134,7 +133,3 @@ STATICFILES_DIRS = (
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-REDACTOR_OPTIONS = {'lang': 'en'}
-REDACTOR_UPLOAD = 'static/uploads/'
-REDACTOR_AUTH_DECORATOR = 'django.contrib.auth.decorators.login_required'

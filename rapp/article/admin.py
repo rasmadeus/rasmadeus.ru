@@ -5,14 +5,3 @@ from redactor.widgets import RedactorEditor
 
 admin.site.register(models.Article)
 admin.site.register(models.CommonData)
-
-class EntryAdminForm(forms.ModelForm):
-    class Meta:
-        model = models.Article
-        fields = ('content',)
-        widgets = {
-           'content': RedactorEditor(),
-        }
-
-class EntryAdmin(admin.ModelAdmin):
-    form = EntryAdminForm
