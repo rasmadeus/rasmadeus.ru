@@ -136,5 +136,5 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 REDACTOR_OPTIONS = {'lang': 'en'}
-REDACTOR_UPLOAD = 'uploads/'
+REDACTOR_UPLOAD = '/static/uploads/'
 REDACTOR_AUTH_DECORATOR = 'django.contrib.auth.decorators.login_required'
