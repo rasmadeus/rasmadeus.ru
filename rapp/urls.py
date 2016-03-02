@@ -6,6 +6,7 @@ from django.conf import urls
 admin.autodiscover()
 
 urlpatterns = [
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^logout/', logout_view),
     url(r'^articles/', include("rapp.article.urls")),
