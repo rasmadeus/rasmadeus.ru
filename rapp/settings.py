@@ -141,6 +141,7 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = 'pillow'
 CKEDITOR_CONFIGS = {
     'default': {
         'skin': 'moono',
@@ -187,9 +188,6 @@ CKEDITOR_CONFIGS = {
         # 'toolbarCanCollapse': True,
         # 'mathJaxLib': '//cdn.mathjax.org/mathjax/2.2-latest/MathJax.js?config=TeX-AMS_HTML',
         'tabSpaces': 4,
-        'uploaded': 1,
-        'fileName': 'foo.jpg',
-        'url': '/media/foo.jpg',
         'extraPlugins': ','.join(
             [
                 # you extra plugins here
