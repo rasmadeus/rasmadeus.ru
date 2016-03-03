@@ -1,8 +1,10 @@
 from django.conf.urls import include, url
 from django.contrib import admin
 from rapp.article.views import index, logout_view
+from django.conf.urls.static import static
 from django.conf import urls
 import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 admin.autodiscover()
 
@@ -14,7 +16,7 @@ urlpatterns = [
     url(r'^$', index),
 ]
 
-urlpatterns += urls.staticfiles_urlpatterns()
-urlpatterns += urls.static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urls.handler404 = 'rapp.article.views.code_404_view'
