@@ -3,7 +3,6 @@ from django.template.loader import get_template
 from rapp.article.models import Article
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
-from django.contrib.auth import logout
 
 
 def _get_greeting(request):
@@ -13,12 +12,13 @@ def _get_greeting(request):
 def _get_default_common_data():
     return {
         'common_data': {
-            'title': 'K. Kulikov home page',
+            'title': 'Developer blog',
             'keywords': 'c++, python, society life',
-            'description': 'K. Kulikov blog',
+            'description': 'Developer blog',
             'author': 'K. Kulikov'
         }
     }
+
 
 def index(request):
     template = get_template('index.html')
