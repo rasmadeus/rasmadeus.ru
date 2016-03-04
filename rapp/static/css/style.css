@@ -119,6 +119,12 @@ body {
     outline: none;
 }
 
+#greeting a {
+    color: rgb(30%, 30%, 30%);
+    text-decoration: none;
+    outline: none;
+}
+
 .article_nav a:hover, .article h1 a:hover, #greeting a:hover {
     color: rgb(100%, 30%, 0%);
 }
