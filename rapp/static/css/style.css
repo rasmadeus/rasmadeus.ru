@@ -113,14 +113,8 @@ body {
     display: inline-block;
 }
 
-.article_nav a, .article h1 a {
+.article_nav a, .article h1 a, #greeting a {
     color: rgb(10%, 10%, 10%);
-    text-decoration: none;
-    outline: none;
-}
-
-#greeting a {
-    color: rgb(0%, 0%, 0%);
     text-decoration: none;
     outline: none;
 }
