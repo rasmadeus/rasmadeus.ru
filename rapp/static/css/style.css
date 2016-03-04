@@ -80,18 +80,6 @@ body {
     animation-direction: alternate;
 }
 
-@media only screen and (max-width: 768px) {
-    .article {
-        width: calc(100% - 1.5em);
-    }
-}
-
-@media only screen and (min-width: 769px) {
-    .article {
-        width: calc(50% - 1.5em);
-    }
-}
-
 @keyframes grow_down {
     from {
         background-color: rgb(90%, 90%, 90%);
@@ -120,20 +108,6 @@ body {
     text-align: justify;
 }
 
-#greeting {
-    width: calc(100% - 1.5em);
-    margin: 0.0em 0.5em 0.5em 0.0em;
-    padding: 0.5em;
-    word-wrap: break-word;
-    text-align: center;
-    vertical-align: center;
-}
-
-#greeting h1 {
-    font-size: 4.0em;
-    letter-spacing: 5px;
-}
-
 .article_nav h2 {
     margin-top: 0.0em;
     display: inline-block;
@@ -147,10 +121,6 @@ body {
 
 .article_nav a:hover, .article h1 a:hover, #greeting a:hover {
     color: rgb(100%, 30%, 0%);
-}
-
-#greeting a {
-    font-size: 2.0em;
 }
 
 .centered_text {
@@ -173,4 +143,43 @@ body {
 .right_image {
     float: right;
     margin: 0.5em 0.0em 0.5em 0.5em;
+}
+
+#greeting {
+    width: calc(100% - 1.5em);
+    margin: 0.0em 0.5em 0.5em 0.0em;
+    padding: 0.5em;
+    word-wrap: break-word;
+    text-align: center;
+    vertical-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .article {
+        width: calc(100% - 1.5em);
+    }
+
+    #greeting a {
+        font-size: 1.0em;
+    }
+
+    #greeting h1 {
+        font-size: 2.0em;
+        letter-spacing: 1px;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .article {
+        width: calc(50% - 1.5em);
+    }
+
+    #greeting a {
+        font-size: 2.0em;
+    }
+
+    #greeting h1 {
+        font-size: 4.0em;
+        letter-spacing: 1px;
+    }
 }
