@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.template.loader import get_template
 from rapp.article.models import Article
 from django.views.generic.detail import DetailView
+from django.views.generic.list import ListView
 from django.contrib.auth import logout
 
 
@@ -29,11 +30,6 @@ def index(request):
     return HttpResponse(template.render(context, request))
 
 
-def logout_view(request):
-    logout(request)
-    return index(request)
-
-
 def code_404_view(request):
     template = get_template('404.html')
     context = {
@@ -49,5 +45,16 @@ class ArticleDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(ArticleDetailView, self).get_context_data(**kwargs)
+        context['greeting'] = _get_greeting(self.request);
+        return context
+
+
+class ArticleListView(ListView):
+    model = Article
+    context_object_name = 'articles'
+
+    def get_context_data(self, **kwargs):
+        context = super(ArticleListView, self).get_context_data(**kwargs)
+        context['article'] = _get_default_common_data()
         context['greeting'] = _get_greeting(self.request);
         return context
