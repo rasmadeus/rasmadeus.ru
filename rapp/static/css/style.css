@@ -130,8 +130,8 @@ body {
 }
 
 #greeting h1 {
-    font-size: 3.0em;
-    letter-spacing:0.05em;
+    font-size: 4.0em;
+    letter-spacing: 5px;
 }
 
 .article_nav h2 {
