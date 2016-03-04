@@ -1,10 +1,10 @@
 from django.conf.urls import include, url
 from django.contrib import admin
-from rapp.article.views import ArticleListView
 from django.conf.urls.static import static
 from django.conf import urls
 import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from rapp.article.views import index
 
 admin.autodiscover()
 
@@ -12,7 +12,7 @@ urlpatterns = [
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^articles/', include("rapp.article.urls")),
-    url(r'^$', ArticleListView.as_view(), name='article-list'),
+    url(r'^$', index),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

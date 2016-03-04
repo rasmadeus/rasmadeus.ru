@@ -1,9 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-    {% for article in articles %}
-        <div class="article">
-            <h1><a href="{% url 'article' article.slug %}">{{ article.header }}</a></h1>
-            {{ article.description }}
-        </div>
-    {% endfor %}
+    <div id="greeting">
+        <h1>I'm very glad to see you at my home page!</h1>
+        <a href="/articles/">Read articles</a>
+    </div>
 {% endblock %}

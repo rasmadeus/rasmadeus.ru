@@ -71,6 +71,7 @@ body {
     width: calc(100% - 1.5em);
 }
 
+
 .article:hover {
     animation-name: grow_down;
     animation-duration: 0.4s;
@@ -119,19 +120,36 @@ body {
     text-align: justify;
 }
 
+#greeting {
+    width: calc(100% - 1.5em);
+    margin: 0.0em 0.5em 0.5em 0.0em;
+    padding: 0.5em;
+    word-wrap: break-word;
+    text-align: center;
+    vertical-align: center;
+}
+
+#greeting h1 {
+    font-size: 3.0em;
+}
+
 .article_nav h2 {
     margin-top: 0.0em;
     display: inline-block;
 }
 
-.article_nav a, .article h1 a {
+.article_nav a, .article h1 a, #greeting a {
     color: rgb(10%, 10%, 10%);
     text-decoration: none;
     outline: none;
 }
 
-.article_nav a:hover, .article h1 a:hover {
+.article_nav a:hover, .article h1 a:hover, greeting a:hover {
     color: rgb(100%, 30%, 0%);
+}
+
+#greeting a {
+    font-size: 1.5em;
 }
 
 .centered_text {

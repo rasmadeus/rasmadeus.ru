@@ -23,7 +23,6 @@ def _get_default_common_data():
 def index(request):
     template = get_template('index.html')
     context = {
-        'articles': Article.objects.all(),
         'greeting': _get_greeting(request),
         'article': _get_default_common_data()
     }
