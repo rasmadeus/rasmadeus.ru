@@ -108,6 +108,11 @@ body {
     text-align: justify;
 }
 
+#one_article.centered_text {
+    text-align: center;
+    vertical-align: middle;
+}
+
 .article_nav h2 {
     margin-top: 0.0em;
     display: inline-block;
@@ -127,11 +132,6 @@ body {
 
 .article_nav a:hover, .article h1 a:hover, #greeting a:hover {
     color: rgb(100%, 30%, 0%);
-}
-
-.centered_text {
-    text-align: center;
-    vertical-align: middle;
 }
 
 .article_nav {
