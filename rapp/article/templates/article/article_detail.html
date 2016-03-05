@@ -5,10 +5,10 @@
         {{ article.content|safe }}
         <div class="article_nav">
             {% if article.prev_article != None %}
-                <h2><a href="{% url 'article' article.prev_article.slug %}">Предисловие</a></h2>
+                <h2><a href="{% url 'article' article.prev_article.slug %}">Previous</a></h2>
             {% endif %}
             {% if article.next_article != None %}
-                <h2><a href="{% url 'article' article.next_article.slug %}">Продолжение</a></h2>
+                <h2><a href="{% url 'article' article.next_article.slug %}">Next</a></h2>
             {% endif %}
         </div>
     </div>
