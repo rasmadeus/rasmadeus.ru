@@ -67,10 +67,13 @@ body {
     word-wrap: break-word;
 }
 
+.article {
+    box-shadow: 0px 0px 12px 0px #000000;
+}
+
 #one_article {
     width: calc(100% - 1.5em);
 }
-
 
 .article:hover {
     animation-name: grow_down;
@@ -86,7 +89,7 @@ body {
     }
 
     to {
-        background-color: rgb(60%, 60%, 60%);
+        background-color: rgb(70%, 70%, 70%);
     }
 }
 
