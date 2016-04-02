@@ -186,6 +186,7 @@ body {
 
 .source_code {
     padding: 0.5em;
+    font-size: 1em;
     background-color: rgb(80%, 80%, 80%);
     font-family: 'Monda', sans-serif;
 }
