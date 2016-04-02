@@ -183,3 +183,9 @@ body {
         margin: 0em;
     }
 }
+
+.source_code {
+    padding: 0.5em;
+    background-color: rgb(80%, 80%, 80%);
+    font-family: 'Monda', sans-serif;
+}
